@@ -18,7 +18,12 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /opt/openpaas
+
 RUN git clone --depth=1 https://github.com/linagora/openpaas-esn.git .
+
+COPY ./data/populate/index.js ./fixtures/populate/index.js
+COPY ./data/populate/data/populate-objects.js ./fixtures/populate/data/populate-objects.js
+
 RUN git clone --depth=1 https://github.com/vishnubob/wait-for-it.git wait-for-it
 RUN cp /opt/openpaas/wait-for-it/wait-for-it.sh /usr/bin/wait-for-it.sh
 
