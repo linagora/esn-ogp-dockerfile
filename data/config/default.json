@@ -1,0 +1,79 @@
+{
+  "app": {
+    "name": "OGP ESN"
+  },
+  "webserver": {
+    "enabled": true,
+    "debugPort": 8081,
+
+    "ip": "0.0.0.0",
+    "ipv6": "::",
+    "port": 8080,
+
+    "ssl_ip": "0.0.0.0",
+    "ssl_ipv6": "::",
+    "ssl_port": 8443,
+    "ssl_key": "config/ssl.key",
+    "ssl_cert": "config/ssl.crt",
+
+    "virtualhosts": [],
+    "startupBufferTimeout": 5000
+  },
+  "wsserver": {
+    "enabled": true,
+    "port": 8080
+  },
+  "db": {
+    "reconnectOnConfigurationChange": true,
+    "forceReconnectOnDisconnect": true
+  },
+  "log": {
+    "file": {
+      "enabled": false,
+      "filename": "./log/application.log",
+      "level": "info",
+      "handleExceptions": true,
+      "json": false,
+      "prettyPrint": true,
+      "colorize": false
+    },
+    "rotate": {
+      "enabled": false,
+      "file": "./log/application.log",
+      "level": "info",
+      "handleExceptions": true,
+      "json": false,
+      "prettyPrint": true,
+      "colorize": false,
+      "size": "10m",
+      "skip": 5
+    },
+    "console": {
+      "enabled": true,
+      "level": "debug",
+      "handleExceptions": true,
+      "json": false,
+      "prettyPrint": true,
+      "colorize": true
+    }
+  },
+  "auth": {
+    "strategies": ["local", "mongo", "bearer"]
+  },
+  "modules": [
+    "linagora.esn.account",
+    "linagora.esn.core.webserver",
+    "linagora.esn.core.wsserver",
+    "linagora.esn.oauth.consumer",
+    "linagora.esn.profile",
+    "linagora.esn.controlcenter",
+    "linagora.esn.chat",
+    "linagora.esn.emoticon",
+    "linagora.esn.vote",
+    "linagora.esn.article",
+    "linagora.esn.admin"
+  ],
+  "email": {
+    "templatesDir": "./templates/email"
+  }
+}
