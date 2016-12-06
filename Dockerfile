@@ -19,7 +19,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /opt/openpaas
 
-RUN git clone --depth=1 https://github.com/linagora/openpaas-esn.git .
+RUN git clone --depth=1 https://ci.open-paas.org/stash/scm/or/rse.git .
 
 COPY ./data/populate/index.js ./fixtures/populate/index.js
 COPY ./data/populate/data/populate-objects.js ./fixtures/populate/data/populate-objects.js
