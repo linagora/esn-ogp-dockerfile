@@ -40,6 +40,7 @@ RUN npm install --production linagora/linagora.esn.emoticon
 
 RUN npm install -g bower && bower install --allow-root
 RUN npm install --production
+RUN sed -ie "/dynamicDirectiveServiceProvider.addInjection('esn-application-menu', contact)/d" modules/linagora.esn.contact/frontend/js/app.js
 
 EXPOSE 8080
 
