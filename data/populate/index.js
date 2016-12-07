@@ -34,12 +34,12 @@ function _populateAdmin() {
 
 function _populateDomain(admin) {
   console.log('[INFO] POPULATE domain');
-  var object = extend({}, DOMAIN_OBJECT, { administrators: [{ user_id: admin }] });
+  var object = extend({}, DOMAIN_OBJECT, { administrators: [{ user_id: admin[0] }] });
   var domain = new Domain(object);
 
   return q.ninvoke(domain, 'save')
     .then(function(domain) {
-      return [admin, domain];
+      return [admin[0], domain[0]];
     }, q.reject);
 }
 
