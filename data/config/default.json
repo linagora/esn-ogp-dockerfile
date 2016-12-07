@@ -71,7 +71,8 @@
     "linagora.esn.emoticon",
     "linagora.esn.vote",
     "linagora.esn.article",
-    "linagora.esn.admin"
+    "linagora.esn.admin",
+    "linagora.esn.signup.local"
   ],
   "email": {
     "templatesDir": "./templates/email"
