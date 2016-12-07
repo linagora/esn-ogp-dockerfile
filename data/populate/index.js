@@ -52,9 +52,13 @@ function _joinDomain(user, domain) {
   return deferred.promise;
 }
 
-module.exports = function(host) {
+function populateAll() {
   console.log('[INFO] POPULATE the ESN');
   return _populateAdmin()
     .then(_populateDomain)
     .spread(_joinDomain);
+}
+
+module.exports = {
+  populateAll
 };
