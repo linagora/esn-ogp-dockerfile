@@ -23,7 +23,7 @@ RUN git clone --depth=1 https://ci.open-paas.org/stash/scm/or/rse.git .
 
 COPY ./data/populate/index.js ./fixtures/populate/index.js
 COPY ./data/populate/data/populate-objects.js ./fixtures/populate/data/populate-objects.js
-COPY ./data/fixtures/esn-config/data/homePage.js ./fixtures/esn-config/data/homePage.js
+COPY ./data/fixtures/esn-config/data/* ./fixtures/esn-config/data/
 COPY ./data/config/default.json ./config/default.json
 COPY ./data/config/default.json ./config/default.dev.json
 RUN cp docker/config/docker-db.json config/db.json
